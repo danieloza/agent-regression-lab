@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Regression Lab Product Proof</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06121f;
+      --panel: rgba(9, 24, 44, 0.92);
+      --border: rgba(94, 160, 255, 0.2);
+      --text: #eef4ff;
+      --muted: #a3b6d7;
+      --accent: #63d0ff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(78, 132, 255, 0.28), transparent 28%),
+        linear-gradient(180deg, #0b1730 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    }
+    .shell {
+      width: min(1280px, calc(100vw - 48px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-size: 13px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 0.98;
+    }
+    .lead {
+      margin: 18px 0 28px;
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      background: rgba(5, 15, 30, 0.78);
+    }
+    .label { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+    .value { font-size: 20px; font-weight: 700; line-height: 1.25; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <p class="eyebrow">Portfolio Project</p>
+      <h1>Agent Regression Lab</h1>
+      <p class="lead">
+        FastAPI evaluation backend for agent scenarios, expected-vs-actual verdicts, replay previews, and run diffs that expose regressions before rollout.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <div class="label">Problem</div>
+          <div class="value">Agents regress quietly after prompt, policy, or tool changes</div>
+        </div>
+        <div class="card">
+          <div class="label">Solution</div>
+          <div class="value">Scenario registry with run diffs and safe replay previews</div>
+        </div>
+        <div class="card">
+          <div class="label">Why it matters</div>
+          <div class="value">Rollout decisions need deterministic review, not vibes</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

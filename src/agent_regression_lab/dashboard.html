@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Regression Lab</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: rgba(9, 24, 44, 0.9);
+      --panel-border: rgba(91, 158, 255, 0.18);
+      --text: #ecf2ff;
+      --muted: #9db1d1;
+      --accent: #6ad0ff;
+      --good: #72e0a4;
+      --warn: #ffd166;
+      --bad: #ff7f96;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(65, 126, 255, 0.28), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(38, 210, 255, 0.18), transparent 35%),
+        linear-gradient(180deg, #091528 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 48px));
+      margin: 0 auto;
+      padding: 48px 0 56px;
+    }
+
+    .hero, .grid article {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero { padding: 32px; margin-bottom: 24px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-size: 13px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 0.98;
+    }
+    .lead {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.55;
+      margin: 18px 0 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .grid article {
+      padding: 22px;
+      min-height: 190px;
+    }
+    .kicker {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .metric {
+      font-size: 34px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .metric.good { color: var(--good); }
+    .metric.warn { color: var(--warn); }
+    .metric.bad { color: var(--bad); }
+    p { margin: 0; line-height: 1.5; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <p class="eyebrow">Portfolio Project</p>
+      <h1>Agent Regression Lab</h1>
+      <p class="lead">
+        FastAPI evaluation layer for agent scenarios, run diffs, replay previews, and rollout-safe regression review.
+      </p>
+    </section>
+    <section class="grid">
+      <article>
+        <div class="kicker">Scenario registry</div>
+        <div class="metric">2 seeded</div>
+        <p>MCP approval regression and hallucinated SQL regression modeled as repeatable backend scenarios.</p>
+      </article>
+      <article>
+        <div class="kicker">Run verdicts</div>
+        <div class="metric good">pass / regression</div>
+        <p>Expected versus actual review captures whether a change stays within rollout guardrails.</p>
+      </article>
+      <article>
+        <div class="kicker">Replay preview</div>
+        <div class="metric warn">safe-by-default</div>
+        <p>Replay previews simulate alternate model and policy settings without executing side effects.</p>
+      </article>
+      <article>
+        <div class="kicker">Run diff</div>
+        <div class="metric">latency, cost, tools</div>
+        <p>Diff surfaces exactly what changed between two runs instead of hiding regressions in prose.</p>
+      </article>
+      <article>
+        <div class="kicker">AI ops angle</div>
+        <div class="metric bad">rollout checks</div>
+        <p>This project focuses on regression inspection, not another one-shot chat demo.</p>
+      </article>
+      <article>
+        <div class="kicker">Best fit</div>
+        <div class="metric">platform teams</div>
+        <p>Built to prove backend and runtime thinking around AI reliability, not only inference calls.</p>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

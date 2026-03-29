@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: agent-regression-lab
+Version: 0.1.0
+Summary: FastAPI platform for agent regression scenarios, run diffs, and replay previews.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi<1.0,>=0.116
+Requires-Dist: uvicorn<1.0,>=0.35
+Requires-Dist: pydantic<3.0,>=2.11
+
+# Agent Regression Lab
+
+> FastAPI platform for evaluating AI agents with scenario registries, run traces, regression diffs, and safe replay previews.
+
+## Why this exists
+
+Most agent demos prove one successful run. Production systems need to answer harder questions:
+
+- did a prompt or policy change break something
+- which tool calls changed between two runs
+- what regression should block rollout
+- how can a team inspect a failed run without re-executing it unsafely
+
+Agent Regression Lab models that missing layer.
+
+## What it includes
+
+- scenario registry for repeatable agent tests
+- seeded regression scenarios for MCP and RAG workflows
+- run records with latency, token cost, verdict, and tool calls
+- expected vs actual outcome review
+- replay previews across alternate model and policy configs
+- run diff endpoint for regression inspection
+- operator-facing dashboard for failures and regressions
+
+## API
+
+- `GET /health`
+- `GET /dashboard`
+- `GET /scenarios`
+- `GET /scenarios/{scenario_id}`
+- `POST /runs`
+- `GET /runs`
+- `GET /runs/{run_id}`
+- `GET /runs/{run_id}/diff/{other_run_id}`
+- `POST /replays`
+- `GET /replays`
+
+## Quickstart
+
+```bash
+python -m pip install -e .
+python -m uvicorn agent_regression_lab.main:app --reload
+```
+
+Open:
+
+- `http://127.0.0.1:8000/dashboard`
+- `http://127.0.0.1:8000/scenarios`
+
+## Seeded scenarios
+
+- `scn_1001` approval regression for an MCP write action
+- `scn_1002` hallucinated SQL regression for a hybrid RAG workflow
+
+## Positioning
+
+This is not another chat interface. It is the regression and replay layer around AI systems: the backend that explains whether a change made an agent safer, riskier, cheaper, or less reliable.

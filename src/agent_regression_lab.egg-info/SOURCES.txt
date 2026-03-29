@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/agent_regression_lab/__init__.py
+src/agent_regression_lab/dashboard.html
+src/agent_regression_lab/main.py
+src/agent_regression_lab/repository.py
+src/agent_regression_lab/services.py
+src/agent_regression_lab.egg-info/PKG-INFO
+src/agent_regression_lab.egg-info/SOURCES.txt
+src/agent_regression_lab.egg-info/dependency_links.txt
+src/agent_regression_lab.egg-info/requires.txt
+src/agent_regression_lab.egg-info/top_level.txt
+tests/test_api.py

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Regression Lab Ops Proof</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #081426 0%, #06101d 100%);
+      color: #edf4ff;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      padding: 40px 24px;
+    }
+    .shell {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+    .panel {
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(6, 16, 31, 0.9);
+      border: 1px solid rgba(112, 182, 255, 0.22);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    }
+    .eyebrow { color: #73d2ff; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; margin: 0 0 10px; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 34px; margin-bottom: 12px; }
+    h2 { font-size: 22px; margin-bottom: 14px; }
+    p, li { color: #a7bbdb; line-height: 1.55; }
+    ul { margin: 0; padding-left: 18px; }
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 118, 145, 0.16);
+      color: #ff91a6;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="panel">
+      <p class="eyebrow">Regression case</p>
+      <h1>Expected approval, observed allow</h1>
+      <p>
+        Scenario <strong>scn_1001</strong> models an MCP write flow that should require approval.
+        A new run is marked as regression if policy drift allows the write path directly.
+      </p>
+      <span class="badge">status: regression</span>
+    </section>
+    <section class="panel">
+      <p class="eyebrow">What the lab captures</p>
+      <h2>Diff and replay review</h2>
+      <ul>
+        <li>verdict change</li>
+        <li>policy version change</li>
+        <li>tool call delta</li>
+        <li>latency and token cost drift</li>
+        <li>safe replay preview without side effects</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
